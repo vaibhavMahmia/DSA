@@ -10,9 +10,10 @@ void displayLinkedList(struct Node* head){
     struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr = head;
     while(ptr != NULL){
-        std::cout << ptr->data << std::endl;
+        std::cout << "[ (" << ptr->data << ") | (" << &ptr->next << ") ]--->";
         ptr = ptr->next;
     }
+    std::cout << "[NULL]" << std::endl;
 }
 
 struct Node* deleteFirst(struct Node* head){
