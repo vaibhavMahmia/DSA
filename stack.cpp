@@ -40,6 +40,24 @@ void displayStack(struct myStack* ptr){
         std::cout << ptr->arr[i] << std::endl;
 }
 
+int peek(struct myStack* sp, int i){
+    int arrayIndex = sp->top - i + 1;
+    if(arrayIndex < 0){
+        std::cout << "Not a valid position for the stack !" << std::endl;
+        return -1;
+    }
+    else   
+        return sp->arr[arrayIndex];
+}
+
+int stackTop(struct myStack* sp){
+    return sp->arr[sp->top];
+}
+
+int stackBottom(struct myStack* sp){
+    return sp->arr[0];
+}
+
 int main(int argc, char const *argv[]){
     struct myStack* sp = (struct myStack *)malloc(sizeof(struct myStack));
     sp->size = 10;
@@ -63,6 +81,10 @@ int main(int argc, char const *argv[]){
     pop(sp);
     std::cout << "..After 2 pop.." << std::endl;
     displayStack(sp);
+    std::cout << "Peek 2 : " << peek(sp, 2) << std::endl;
+
+    std::cout << "Stack top : " << stackTop(sp) << std::endl;
+    std::cout << "Stack bottom : " << stackBottom(sp) << std::endl;
 
     return 0;
 }
