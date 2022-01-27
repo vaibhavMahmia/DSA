@@ -10,8 +10,8 @@ void displayArray(int * array, int size){
 void insertionSort(int *array, int size){
 
     int key, j;
-    //Loop for passes
-    for(int i = 1; i <= size - 1; i++ ){
+    //Loop for passes                          0  1  2  3  4  5  (i = 1;  j = 0) (a[i] = 34; a[j] = 12)
+    for(int i = 1; i <= size - 1; i++ ){    //  12 34 56 78 43 23
         key = array[i];
         j = i - 1;
         while(j >= 0 && array[j] > key){
